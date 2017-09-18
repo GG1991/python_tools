@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<VTKFile type="PUnstructuredGrid" version="0.1" byte_order="LittleEndian">
+<PUnstructuredGrid GhostLevel="0">
+<PPoints>
+<PDataArray type="Float32" Name="Position" NumberOfComponents="3"/>
+</PPoints>
+<PCells>
+<PDataArray type="Int32" Name="connectivity" NumberOfComponents="1"/>
+<PDataArray type="Int32" Name="offsets"      NumberOfComponents="1"/>
+<PDataArray type="UInt8" Name="types"        NumberOfComponents="1"/>
+</PCells>
+<PPointData Vectors="displ">
+<PDataArray type="Float64" Name="displ"    NumberOfComponents="3" />
+<PDataArray type="Float64" Name="residual" NumberOfComponents="3" />
+<PDataArray type="Int32"   Name="bc_kinds" NumberOfComponents="1" />
+</PPointData>
+<PCellData>
+<PDataArray type="Int32"   Name="part" NumberOfComponents="1"/>
+<PDataArray type="Float64" Name="strain" NumberOfComponents="4"/>
+<PDataArray type="Float64" Name="stress" NumberOfComponents="4"/>
+<PDataArray type="Float64" Name="energy" NumberOfComponents="1"/>
+</PCellData>
+<Piece Source="macro_t_1_0.vtu"/>
+</PUnstructuredGrid>
+</VTKFile>
