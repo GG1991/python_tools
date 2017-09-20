@@ -66,13 +66,19 @@ def getPtsCoord( _Obj, _T ):
 #----------------------------------------------------------------# 
 #----------------------------------------------------------------# 
 
-fin   = "macro_t_10.pvtu"
+fin   = "macro_t_1.pvtu"
 PVTU  = XMLPartitionedUnstructuredGridReader(FileName=fin)
 KEYs  = PVTU.GetPointDataInformation().keys()
 Times = np.array(PVTU.TimestepValues)
 
+PlotOverLine1 = PlotOverLine( Input=PVTU, guiName="PlotOverLine1", Source="High Resolution Line Source" )
+PlotOverLine1.Source.Point2 = [30.0, 30.0, 0.0]
+PlotOverLine1.Source.Point1 = [30.0, 0.0, 0.0]
+PlotOverLine1.Source.Resolution = 1000
+PlotOverLine1.UpdatePipeline()
+
 key   = "displ"
-Displ = getPtsData( PVTU, key )
+Displ = getPtsData( PlotOverLine1 )
 print Displ.shape 
 
 
